@@ -1,7 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {Category} from '../schemas/book.schema';
 import { IsNotEmpty, IsString, IsNumber, IsEnum } from 'class-validator';
-import { User } from 'src/auth/schema/auth.schema';
+// import { User } from 'src/auth/schema/auth.schema';
+import {User} from '../../auth/schema/auth.schema'
 
 export class CreateBookDto{
 
