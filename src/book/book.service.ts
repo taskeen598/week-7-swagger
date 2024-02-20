@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Book } from './schemas/book.schema';
 import * as mongoose from 'mongoose';
 import { Query } from 'express-serve-static-core';
-import { User } from 'src/auth/schema/auth.schema';
+import { User } from '../auth/schema/auth.schema';
 
 @Injectable()
 export class BookService {
