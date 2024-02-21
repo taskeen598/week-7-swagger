@@ -14,7 +14,7 @@ import { Book } from './schemas/book.schema';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { Query as ExpressQuery } from 'express-serve-static-core';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { UseGuards } from '@nestjs/common/decorators/core/use-guards.decorator';
 
@@ -29,6 +29,7 @@ export class BookController {
   }
 
   @Post()
+  @ApiBearerAuth('access-token')
   @UseGuards(JwtAuthGuard)
   async createBook(
     @Body()
